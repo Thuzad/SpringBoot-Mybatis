@@ -5,15 +5,20 @@
 	<select id="getTestimpById" parameterType="int" resultType="Testimp">
 		SELECT * FROM testimp WHERE ID=#{id}
 	</select>
-	<select id="getTestimpById" parameterType="int" resultType="Testimp">
-		SELECT * FROM testimp WHERE ID=#{id}
+
+	<select id="getALLTestimp" resultType="Testimp">
+		select * from testimp
 	</select>
-	<select id="getTestimpById" parameterType="int" resultType="Testimp">
-		SELECT * FROM testimp WHERE ID=#{id}
-	</select>
-	<select id="getTestimpById" parameterType="int" resultType="Testimp">
-		SELECT * FROM testimp WHERE ID=#{id}
-	</select>
-	<select id="getTestimpById" parameterType="int" resultType="Testimp">
-		SELECT * FROM testimp WHERE ID=#{id}
-	</select>
+
+	<delete id="deleteTestimpById" parameterType="int">
+		delete from testimp where id=#{id}
+	</delete>
+
+	<insert id="insertTestimpById" parameterType="Testimp">
+		insert into testimp(freq,word) values(#{freq}, #{word})
+	</insert>
+
+	<update id="updateTestimpById" parameterType="Testimp">
+		update testimp set freq=#{freq},word=#{word} where id=#{id}
+	</update>
+</mapper>
